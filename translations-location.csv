@@ -1,0 +1,6 @@
+#file lines-in-file translation-key-lineNumber
+#example
+#file1.txt 
+file1.txt 1,2 2
+#file2.txt, [1-6] [2-4]
+#file3.txt * *
