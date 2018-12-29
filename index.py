@@ -6,6 +6,7 @@ def readCMDParams():
     parser = argparse.ArgumentParser(description='A simple tools for find & replace text in files')
     # parser.add_argument('inputDir')
     # parser.add_argument('fileExtensions',help = 'e.g "java txt"')
+    parser.add_argument('replace',help='save translations as main files')
     args = parser.parse_args()
     return args
 
@@ -83,8 +84,12 @@ for loc in translationLocStrings:
         
         result = findAndReplaceWithLine(fileToTranslate.readlines(),linesToReplace,dicSelectedWords)
 
-        filename = os.path.splitext(fileToTranslateLoc)
-        outputFileName = filename[0] + '-translate' + filename[1]
+        if cmdArgs.replace:
+            outputFileName = fileToTranslateLoc
+        else:    
+            filename = os.path.splitext(fileToTranslateLoc)
+            outputFileName = filename[0] + '-translate' + filename[1]
+
         outputFile = file(outputFileName,'w')
         outputFile.write(''.join(result))
         outputFile.close()

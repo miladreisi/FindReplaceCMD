@@ -4,3 +4,4 @@
 file1.txt * *
 file2.txt [1-6] [2-4]
 file3.txt * *
+testFolder/1.txt * *

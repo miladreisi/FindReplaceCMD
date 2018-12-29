@@ -1,8 +1,8 @@
-find me
+replace with me
 ok
-another thing
+ok
 ok
 درباره ما
 ok
-find me here
-about us
+replace with me here
+درباره ما

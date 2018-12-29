@@ -1,6 +1,6 @@
-find me
+replace with me
 ok
-another thing
+ok
 ok
 درباره ما
 its work

@@ -1,5 +1,5 @@
-find me
-another thing
+replace with me
 ok
-find me again
-its works
+ok
+replace with me again
+Yes Yes Yes its works
