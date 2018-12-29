@@ -40,12 +40,12 @@ def parseNumbers(numbersStr):
     result = []
     if numbersStr.isdigit():
         result = [int(numbersStr)]
-    elif numbersStr.find(','): #selective mode, line 2,3,6 for example
+    elif numbersStr.find(',') != -1: #selective mode, line 2,3,6 for example
         result = numbersStr.replace(' ','').split(',')
         result = map(lambda x: int(x), result)
-    elif numbersStr.find('-'): #range mode, from line 2 to 6 for example
+    elif numbersStr.find('-') != -1: #range mode, from line 2 to 6 for example
         r = numbersStr.replace('[','').replace(']','').split('-')
-        result = range(int(r[0]), int(r[1]))
+        result = range(int(r[0]), int(r[1]) + 1)
     elif numbersStr.strip() == '*':
         result = 'ALL'
     return result
@@ -83,12 +83,13 @@ for loc in translationLocStrings:
         
         result = findAndReplaceWithLine(fileToTranslate.readlines(),linesToReplace,dicSelectedWords)
 
-        outputFileName = 'example-out.txt'
+        filename = os.path.splitext(fileToTranslateLoc)
+        outputFileName = filename[0] + '-translate' + filename[1]
         outputFile = file(outputFileName,'w')
         outputFile.write(''.join(result))
         outputFile.close()
     else:
-        print('Warning: fileNotFound ' + fileToTranslate)
+        print('Warning: fileNotFound ' + fileToTranslateLoc)
 
 
     
